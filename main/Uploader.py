@@ -173,9 +173,7 @@ def uploadToNFTPort(nftport_panel_input):
         metaData = json.load(inputFile)
         metaData['animation_url'] = resModelUrl
         metaData['file_url'] = resImageUrl
-        metaData['custom_fields'] = {
-            'edition': round(time.time() * 1000)
-        }
+        
     res = nftPortMetaUploader(nftport_panel_input.apikey, metaData)
     metaData['metadata_uri'] = res['metadata_uri']
     with open(file, 'w') as outputFile:

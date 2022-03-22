@@ -111,7 +111,7 @@ def renameMetaData(rename_MetaData_Variables):
                 os.mkdir(openSeaMetaDataPath)
 
             # openSeaNewName = name.split("_")[0] + "_" + str(file_num)
-            openSeaNewName = name.split("_")[0] + "_" + str(round(time.time() * 1000))
+            openSeaNewName = name.split("_")[0]
             openSeaFileName =name.split("_")[0] + "_" + str(file_num)+".json"
             if len(rename_MetaData_Variables.openSea_description) < 1:
                 rename_MetaData_Variables.openSea_description = openSeaNewName

@@ -105,11 +105,16 @@ def returnErc721MetaData(name, NFT_DNA, NFT_Variants, custom_Fields_File, enable
     return metaDataDictErc721
 
 def returnOpenSeaMetaData(name, NFT_DNA, NFT_Variants, custom_Fields_File, enableCustomFields, erc721_description):
+    dna = NFT_DNA.replace("-", "")
     metaDataDictErc721 = {
-        "name": name,
+        "name": name+"_"+dna,
         "description": erc721_description,
         "image": "",
         "attributes": None,
+    }
+
+    metaDataDictErc721['custom_fields'] = {
+        'edition': int(dna)
     }
 
     attributes = []
